@@ -1,0 +1,19 @@
+# importing light weight os
+FROM python:3.8-slim-buster
+
+#creating a forlder, where we are going to put all the file
+RUN mkdir /Demo
+
+# now savng the working dir
+WORKDIR /Demo
+
+# set environment variables
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONUNBUFFERED 1
+
+# now i am adding all the files of current dir to Demo folder
+COPY . /Demo
+RUN pip3 install -r req.txt
+
+
+CMD [ "python3", "manage.py", "runserver", "0.0.0.0:8000"]
