@@ -29,3 +29,7 @@ Setting the non-empty value of PYTHONUNBUFFERED means
 that the python output is transmitted directly to the 
 terminal without being buffered and that allows displaying 
 the application’s output in real-time. 
+
+
+# to go inside the docker container and access the as root
+sudo docker exec -u 0  -it container_name_or_id /bin/bash
